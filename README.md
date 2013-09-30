@@ -69,6 +69,7 @@ and a background value of (0,0,0,0) like the animation texture.
 In order to show countries on the sphere one must provide two textures:
 * countries_colored.png
 * borders_oceans_lakes.png
+
 The first one is required to identify different countries.
 This is achieved by setting a unique red color tone with maximum opacity
 to every country.
