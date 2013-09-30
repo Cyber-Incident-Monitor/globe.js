@@ -26,3 +26,6 @@ to toggle the view between the normal view showing markers and colored countries
 countries and marker animation.
 
 ## Usage ###
+
+
+## Attributions ##
