@@ -87,10 +87,12 @@ GLOBE.Countries = function(options) {
 		};
 		interpolator = options.interpolator || defaultInterpolator;
 		maxSaturation = options.maxSaturation || 255;
-		if (maxSaturation > 255)
+		if (maxSaturation > 255) {
 			maxSaturation = 255;
-		if (maxSaturation < 0)
+		}
+		if (maxSaturation < 0) {
 			maxSaturation = 0;
+		}
 		
 		markerPerCountry = {};
 		markers = 0;
@@ -115,6 +117,17 @@ GLOBE.Countries = function(options) {
 		obj.getCC = getCC;
 		obj.getMarkers = getMarkers;
 		obj.getAllMarkers = getAllMarkers;
+		obj.hasMarker = hasMarker;
+	}
+	
+	/**
+	 * State whether any country has at least one marker
+	 */
+	function hasMarker() {
+		if (markers > 0) {
+			return true;
+		}
+		return false;
 	}
 	
 	/**
@@ -135,8 +148,7 @@ GLOBE.Countries = function(options) {
 				// if there are no markers set the ratio to zero
 				// (avoiding division by zero) and set the color directly
 				setColor(i, maxSaturation, maxSaturation, maxSaturation);
-			}
-			else {
+			} else {
 				var absolute = (markerPerCountry[code[i]] | 0);	// zero if undefined
 				var ratio = absolute / markers;
 				var value = interpolator(ratio) * maxSaturation;
@@ -159,7 +171,7 @@ GLOBE.Countries = function(options) {
 	 * Decrement the marker number of a specific country
 	 */
 	function dec(cc) {
-		if(markerPerCountry[cc] > 0) {
+		if (markerPerCountry[cc] > 0) {
 			markers--;
 			markerPerCountry[cc] = markerPerCountry[cc] - 1;
 			updateCountries();
