@@ -180,9 +180,9 @@ GLOBE.main = function(container, imgPath, options) {
 		// every texture to be used in the globe
 		res = {
 			// load pickTexture without any interpolation and mipmaps
-			"pickTexture": load(imgPath + 'world.png', THREE.NearestFilter, THREE.NearestFilter),
+			"pickTexture": load(imgPath + 'countries_colored.png', THREE.NearestFilter, THREE.NearestFilter),
 			// load borderTexture with linear filtering and without mipmaps
-			"borderTexture": load(imgPath + 'borders.png',  THREE.LinearFilter, THREE.LinearFilter),
+			"borderTexture": load(imgPath + 'borders_oceans_lakes.png',  THREE.LinearFilter, THREE.LinearFilter),
 			// load markerTexture with linear filtering and without mipmaps
 			"markerTexture": load(imgPath + 'circle.png', THREE.LinearFilter, THREE.LinearFilter),
 			// load animationTexture with linear filtering and without mipmaps
