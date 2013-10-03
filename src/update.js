@@ -73,14 +73,14 @@ GLOBE.Update = function(f, t) {
 	function startTimeout(execute) {
 		setTimeout(function() {
 			// execute the updateFunction if required
-			if (execute) {
+			if (execute)
 				updateFunction();
-			}
 			// check if another execution is enqueued
-			if (enqueued) {
+			if(enqueued) {
 				enqueued = false;
 				startTimeout(true);
-			} else {
+			}
+			else {
 				blocked = false;
 			}
 		}, timeoutInterval);

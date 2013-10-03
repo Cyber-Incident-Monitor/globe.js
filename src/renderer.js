@@ -88,10 +88,11 @@ GLOBE.Renderer = function(container, pickTexture, borderTexture, mpcTexture, gra
 	 */
 	function renderView(view) {
 		// render dependend on mode
+		// FIXME view.mode
 		var mode = view.getMode();
-		if (mode == GLOBE.MapMode) {
+		if (mode == GLOBE.MapMode)
 			renderer.render(view.scene, view.camera);
-		} else if (mode == GLOBE.HeatMode) {
+		else if (mode == GLOBE.HeatMode) {
 			// renew heatTexture
 			renderer.render(view.scene, view.camera, heatTexture);
 			// render to screen
@@ -134,7 +135,7 @@ GLOBE.Renderer = function(container, pickTexture, borderTexture, mpcTexture, gra
 		renderer.setSize(w, h);
 		view.resize(w/h);
 		// TODO limit the time between recreating a FBO
-		if (heatTexture.width != w || heatTexture.height - h != 10) {
+		if(heatTexture.width != w || heatTexture.height - h != 10) {
 			// create a new render target (and heatmap) since a FBO is not resizeable
 			//heatTexture.dispose();		// TODO required?
 			heatTexture =  new THREE.WebGLRenderTarget(w, h, {"format": THREE.RGBAFormat});

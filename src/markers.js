@@ -56,13 +56,11 @@ GLOBE.Markers = function(markerTexture, heatTexture, animationTexture, options) 
 		maxMarker = options.maxMarker || 10000;
 		maxAnimation = options.maxAnimation || 100;
 		// have at least one marker
-		if (maxMarker < 1) {
+		if(maxMarker < 1)
 			maxMarker = 1;
-		}
 		// do not exceed 2**24 = 16777216 markers (RGB coded = 24bit)
-		if (maxMarker > 16777216) {
+		if(maxMarker > 16777216)
 			maxMarker = 16777216;
-		}
 		var markerSize = options.markerSize || 15;
 		var heatSize = options.heatSize || 10;
 		var animationSize = options.animationSize || 40;
@@ -315,7 +313,8 @@ GLOBE.Markers = function(markerTexture, heatTexture, animationTexture, options) 
 		animationMaterial.uniforms.mode.value = mode;
 		if (mode == GLOBE.HeatMode) {
 			markerMaterial.blending = THREE.SubtractiveBlending;
-		} else {
+		}
+		else {
 			markerMaterial.blending = THREE.NormalBlending;
 		}
 	}

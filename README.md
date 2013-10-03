@@ -2,7 +2,7 @@ globe.js
 ========
 
 A javascript library visualizing individual data on an interactive globe
-using the three.js library (WebGL).
+using the three.js library (webGL).
 It is based on webgl-globe, formerly on
 [github](https://github.com/dataarts/webgl-globe) and at the time of
 this writing on [code.google](http://code.google.com/p/webgl-globe/).

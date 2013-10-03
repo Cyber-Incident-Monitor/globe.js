@@ -39,7 +39,6 @@ GLOBE.main = function(container, imgPath, options) {
 	var renderer;
 	var tooltip;
 	var position;
-	var countries;
 	
 	var res;
 	var mouseDown = false;
@@ -126,7 +125,6 @@ GLOBE.main = function(container, imgPath, options) {
 			obj.rotate = rotate;
 			obj.toggleView = toggleView;
 			obj.resize = resize;
-			obj.hasMarker = countries.hasMarker;
 			
 			// zoom with mousewheel in firefox (taken from coredumpling-webgl-globe-firefox-opera-zoom)
 			container.addEventListener('DOMMouseScroll', onMouseWheel, false);
@@ -159,9 +157,8 @@ GLOBE.main = function(container, imgPath, options) {
 		var onLoad = function(texture) {
 			resCount--;
 			console.log(resCount + " textures left to be loaded (" + new Date() + ")");
-			if (resCount == 0) {
+			if(resCount == 0)
 				callback();
-			}
 		};
 		
 		// function to load a texture with specified properties
@@ -173,12 +170,10 @@ GLOBE.main = function(container, imgPath, options) {
 			resCount++;
 			var texture = THREE.ImageUtils.loadTexture(path, {}, onLoad);
 			// specify the texture filter
-			if (minFilter !== undefined) {
+			if(minFilter !== undefined)
 				texture.minFilter = minFilter;
-			}
-			if (magFilter !== undefined) {
+			if(magFilter !== undefined)
 				texture.magFilter = magFilter;
-			}
 			return texture;
 		};
 		
@@ -261,11 +256,10 @@ GLOBE.main = function(container, imgPath, options) {
 	 */
 	function toggleView() {
 		var mode = view.getMode();
-		if (mode == GLOBE.HeatMode) {
+		if (mode == GLOBE.HeatMode)
 			view.setMode(GLOBE.MapMode);
-		} else {
+		else
 			view.setMode(GLOBE.HeatMode);
-		}
 	}
 	
 	/**
@@ -286,7 +280,7 @@ GLOBE.main = function(container, imgPath, options) {
 	function zoom(delta) {
 		tooltip.hide();
 		// only zoom if no mouse down
-		if (!mouseDown) {
+		if(!mouseDown) {
 			var pos = new THREE.Vector3(-delta, 0, 0);
 			position.adjustTarget(pos);
 		}
@@ -298,7 +292,7 @@ GLOBE.main = function(container, imgPath, options) {
 	function rotate(horizAngle, vertAngle) {
 		tooltip.hide();
 		// only rotate if no mouse down
-		if (!mouseDown) {
+		if(!mouseDown) {
 			var pos = new THREE.Vector3(0, horizAngle, vertAngle);
 			position.adjustTarget(pos);
 		}
@@ -360,9 +354,9 @@ GLOBE.main = function(container, imgPath, options) {
 		var color = renderer.getPixel(posX, posY);
 		//console.log(color.r, color.g, color.b, color.a);
 		// if there is no transparency in the picked color
-		if (color.a == 255) {
+		if(color.a == 255) {
 			// if there is no red in the color show marker label
-			if (color.r == 0) {
+			if(color.r == 0) {
 				var hex = (color.r << 16) + (color.g << 8) + (color.b);
 				//console.log("marker", hex);
 				// show only standard label information if advanced information is not requested (default is advanced)
@@ -370,7 +364,7 @@ GLOBE.main = function(container, imgPath, options) {
 				tooltip.show(label, screenPosX, screenPosY);
 			}
 			// if the color has red color part show country label
-			if (color.r > 0 && color.r < 254) {
+			if(color.r > 0 && color.r < 254) {
 				var cc = countries.getCC(color.r);
 				var markers = countries.getMarkers(color.r);
 				var allMarkers = countries.getAllMarkers();
