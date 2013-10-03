@@ -154,15 +154,13 @@ GLOBE.View = function(mapTexture, pickTexture, borderTexture, markerTexture, hea
 	function setMode(m) {
 		mode = m;
 		markers.setMode(m);
-		if(m == GLOBE.PickMode) {
+		if (m == GLOBE.PickMode) {
 			atmosphere.setVisibility(false);
 			sphere.setTexture(pickTexture);
-		}
-		else if(m == GLOBE.HeatMode) {
+		} else if (m == GLOBE.HeatMode) {
 			atmosphere.setVisibility(true);
 			sphere.setTexture(borderTexture);
-		}
-		else {	// MapMode
+		} else {	// MapMode
 			atmosphere.setVisibility(true);
 			sphere.setTexture(mapTexture);
 		}

@@ -70,9 +70,9 @@ GLOBE.Position = function(options) {
 		lowerLimit = options.lowerLimit || MIN.clone();
 		upperLimit = options.upperLimit || MAX.clone();
 		weights = options.weights || ONES.clone();
-		for(i = 0; i < 3; i++) {
+		for (i = 0; i < 3; i++) {
 			var component = weights.getComponent(i);
-			if(component <= 0 || component > 1) {
+			if (component <= 0 || component > 1) {
 				console.log("The " + i + "th element of initialWeights is not in the interval (0,1]");
 				weights = ONES.clone();
 				break;
