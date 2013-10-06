@@ -38,7 +38,11 @@ heatmap-like view without colored countries and marker animation.
 Download the minified version of three.js and this library.
 Additionally download the css file and the textures to get started.
 
-See example.html how to include and use the library.
+See [example.html](https://github.com/Cyber-Incident-Monitor/globe.js/blob/master/example.html)
+how to include and use the library.
+
+Hint: Use a webserver to load the page to avoid restrictions not showing the globe (cross-origin image load problems),
+for example running `python3 -m http.server` in the specific directory.
 
 ### Texture Requirements ###
 #### Marker ####
@@ -67,8 +71,8 @@ and a background value of (0,0,0,0) like the animation texture.
 
 #### Globe ####
 In order to show countries on the sphere one must provide two textures:
-* countries_colored.png
-* borders_oceans_lakes.png
+* [countries_colored.png](https://github.com/Cyber-Incident-Monitor/globe.js/blob/master/textures/countries_colored.png)
+* [borders_oceans_lakes.png](https://github.com/Cyber-Incident-Monitor/globe.js/blob/master/textures/borders_oceans_lakes.png)
 
 The first one is required to identify different countries.
 This is achieved by setting a unique red color tone with maximum opacity
