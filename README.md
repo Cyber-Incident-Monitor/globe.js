@@ -37,14 +37,17 @@ between the normal view showing markers and colored countries and a
 heatmap-like view without colored countries and marker animation.
 
 ### Usage ###
-Download the minified version of three.js and this library.
+Download the minified version of [three.js](https://github.com/mrdoob/three.js) and
+[this library](https://raw.github.com/Cyber-Incident-Monitor/globe.js/master/globe.min.js)
 Additionally download the css file and the textures to get started.
 
 See [example.html](https://github.com/Cyber-Incident-Monitor/globe.js/blob/master/example.html)
-how to include and use the library.
+how to include and use the library and
+[advancedExample.html](https://github.com/Cyber-Incident-Monitor/globe.js/blob/master/advancedExample.html)
+for a more detailed view of the globe.js API.
 
-Hint: Use a webserver to load the page to avoid restrictions not showing the globe (cross-origin image load problems),
-for example running `python3 -m http.server` in the specific directory.
+Hint: Use a webserver to load the examples to avoid restrictions not showing the globe
+(cross-origin image load problems), for example running `python3 -m http.server` in the specific directory.
 
 ### Texture Requirements ###
 #### Marker ####
@@ -112,3 +115,6 @@ creation of the textures for example by following this steps:
 * edit the image to fit in the desired range (sometimes the imported
 image is too large)
 * save the result to a png
+
+### Projects using globe.js ###
+* [TraCINg](https://github.com/Cyber-Incident-Monitor/TraCINg-Server), live at [ssi.cased.de](http://ssi.cased.de/#/globe)

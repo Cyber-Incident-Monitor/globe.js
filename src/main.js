@@ -70,7 +70,6 @@ GLOBE.main = function(container, imgPath, options) {
 		// fetch width and height of the container or window
 		var w = container.offsetWidth || window.innerWidth;
 		var h = container.offsetHeight || window.innerHeight;
-		container.className += " globe-loading-gif";
 		
 		// create countries
 		countries = new GLOBE.Countries();
