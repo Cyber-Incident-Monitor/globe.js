@@ -42,7 +42,7 @@ See [example.html](https://github.com/Cyber-Incident-Monitor/globe.js/blob/maste
 how to include and use the library.
 
 Hint: Use a webserver to load the page to avoid restrictions not showing the globe (cross-origin image load problems),
-for example running 'python3 -m http.server' in the specific directory.
+for example running `python3 -m http.server` in the specific directory.
 
 ### Texture Requirements ###
 #### Marker ####
