@@ -33,3 +33,7 @@
 	margin: -27px 0 0 1px;
 	padding: 0px 2px;
 }
+
+.globe-loading-gif {
+	background: #FFFFFF url(./loading.gif) center center no-repeat;
+}
