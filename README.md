@@ -41,6 +41,9 @@ Additionally download the css file and the textures to get started.
 See [example.html](https://github.com/Cyber-Incident-Monitor/globe.js/blob/master/example.html)
 how to include and use the library.
 
+Hint: Use a webserver to load the page to avoid restrictions not showing the globe (cross-origin image load problems),
+for example running 'python3 -m http.server' in the specific directory.
+
 ### Texture Requirements ###
 #### Marker ####
 The circle.png texture is used to visualize the marker by multiplying
