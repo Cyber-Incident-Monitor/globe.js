@@ -34,6 +34,9 @@
 	padding: 0px 2px;
 }
 
-.globe-loading-gif {
+.globe-background {
 	background: #FFFFFF url(./loading.gif) center center no-repeat;
+	height: 100%;
+	width: 100%;
+	position: absolute;
 }
