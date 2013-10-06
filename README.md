@@ -104,7 +104,7 @@ depend on the texture size. Only the resolution is influenced.
 To generate both globe textures one may use the svgs (which are
 derivative works of http://commons.wikimedia.org/wiki/File:BlankMap-World6-Equirectangular.svg
 licensed under [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/))
-provided in this repository.
+provided in this repository or a similar equirectangular map.
 Since the countries_colored.png is used to identify countries the colors
 must not be altered in this process. Moreover reducing the number of
 different colors in a png file lowers the file size.
