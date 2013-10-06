@@ -8,6 +8,8 @@ It is based on webgl-globe, formerly on
 this writing on [code.google](http://code.google.com/p/webgl-globe/).
 This project is licensed under the Apache License, Version 2.0 like
 webgl-globe. See the LICENSE file for detailed information.
+The textures, loading animation and the svgs are licensed under
+[CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
 
 ### Features ###
 The library is able to add or remove a marker at a specified location
@@ -96,8 +98,10 @@ graphics editor like [GIMP](http://www.gimp.org/).
 Note that the size of the rendered animation, marker, etc. does not
 depend on the texture size. Only the resolution is influenced.
 
-To generate both globe textures one may use the svgs provided in this
-repository.
+To generate both globe textures one may use the svgs (which are
+derivative works of http://commons.wikimedia.org/wiki/File:BlankMap-World6-Equirectangular.svg
+licensed under [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/))
+provided in this repository.
 Since the countries_colored.png is used to identify countries the colors
 must not be altered in this process. Moreover reducing the number of
 different colors in a png file lowers the file size.
