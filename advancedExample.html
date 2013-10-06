@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Advanced globe.js example</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="./globe.css" type="text/css" media="screen"/>
+		<script type="text/javascript" src="./three.min.js"></script>
+		<script src="./globe.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<button type="button" onClick="globe.zoom(100);">Zoom in</button>
+		<button type="button" onClick="globe.zoom(-100);">Zoom out</button>
+		<button type="button" onClick="globe.rotate(-0.000001, 0);">Rotate left</button>
+		<button type="button" onClick="globe.rotate(0.000001, 0);">Rotate right</button>
+		<button type="button" onClick="globe.rotate(0, 0.0000005);">Rotate up</button>
+		<button type="button" onClick="globe.rotate(0, -0.0000005);">Rotate down</button>
+		<button type="button" onClick="globe.toggleView();">Toggle view</button>
+		<button type="button" onClick="globe.reset();">Reset</button>
+		<button type="button" onClick="globe.resize();">Resize</button>
+		<br>
+		<button type="button" onClick="globe.addMarker('DE', 50, 9,'Description');">Add a predefined marker</button>
+		<button type="button" onClick="globe.removeMarker(0);">Remove the first marker</button>
+		<br>
+		<input id="cc" type="text" placeholder="ISO 3166 ALPHA-2 or MaxMind specific code (e.g. EU)"></input>
+		<input id="lat" type="number" placeholder="latitude"></input>
+		<input id="long" type="number" placeholder="longitude"></input>
+		<input id="desc" type="text" placeholder="Description"></input>
+		<button type="button" onClick="addCustomMarker();">Add a custom marker</button>
+		<br>
+		<input id="nth" type="number" placeholder="nth marker"></input>
+		<button type="button" onClick="globe.removeMarker(document.getElementById('nth').value);">Remove the nth marker</button>
+		<br>
+		<button type="button" onClick="alert('The globe has marker: ' + globe.hasMarker());">Does the globe have any marker?</button>
+		
+		<div id="globe" class=".globe-background"></div>
+		<script type="text/javascript">
+			var container = document.getElementById("globe");
+			globe = new GLOBE.main(container, "./textures/");
+			function addCustomMarker() {
+				console.log(document.getElementById("cc"));
+				var cc = document.getElementById('cc').value;
+				var lat = document.getElementById('lat').value;
+				var long = document.getElementById('long').value;
+				var desc = document.getElementById('desc').value;
+				globe.addMarker(cc, lat, long, desc);
+			}
+		</script>
+	</body>
+</html>
